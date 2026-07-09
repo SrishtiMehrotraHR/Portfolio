@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srishti Mehrotra — Talent Acquisition &amp; People Analytics</title>
+<meta name="description" content="Talent Acquisition Specialist specializing in AI-augmented recruiting and people analytics. Portfolio of SQL, Excel, and HR Operations projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,680&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F3A5F;
+    --navy-deep:#152A44;
+    --paper:#F6F4EE;
+    --paper-alt:#EEEAE0;
+    --ink:#24272B;
+    --ink-soft:#5B5F66;
+    --emerald:#2A6F5B;
+    --emerald-soft:#E3EEE9;
+    --gold:#B8873D;
+    --gold-soft:#F4EAD4;
+    --line:#DEDAD0;
+    --line-dark:#33507A;
+    --white:#FFFFFF;
+    --display:'Fraunces', serif;
+    --body:'Inter', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--body); font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gold); margin:0 0 14px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:22px; height:1px; background:var(--gold); display:inline-block;}
+  h1,h2,h3{font-family:var(--display); font-weight:600; margin:0; color:var(--navy); letter-spacing:-0.01em;}
+  h2{font-size:clamp(26px,3.4vw,38px); font-weight:680;}
+  p{margin:0;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; font-family:var(--body); font-weight:600;
+    font-size:14.5px; padding:12px 22px; border-radius:8px; text-decoration:none; cursor:pointer;
+    border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--navy); color:var(--white);}
+  .btn-primary:hover{background:var(--navy-deep); box-shadow:0 6px 18px rgba(31,58,95,.28);}
+  .btn-ghost{background:transparent; color:var(--navy); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--navy); background:rgba(31,58,95,.04);}
+  .btn-on-dark{background:transparent; color:var(--paper); border-color:var(--line-dark);}
+  .btn-on-dark:hover{border-color:var(--gold); color:var(--gold);}
+  .btn-gold{background:var(--gold); color:#2A1F0C;}
+  .btn-gold:hover{background:#A67932; box-shadow:0 6px 18px rgba(184,135,61,.3);}
+
+  /* NAV */
+  .nav{
+    position:sticky; top:0; z-index:50; background:rgba(246,244,238,.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent; transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .nav.scrolled{border-color:var(--line); box-shadow:0 2px 14px rgba(31,58,95,.06);}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:var(--maxw); margin:0 auto;}
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand-mark{
+    width:34px; height:34px; border-radius:8px; background:var(--navy); color:var(--white);
+    display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:680; font-size:15px;
+  }
+  .brand-name{font-family:var(--display); font-weight:600; font-size:17px; color:var(--navy);}
+  .nav-links{display:flex; gap:30px; align-items:center;}
+  .nav-links a{text-decoration:none; font-size:14.5px; font-weight:500; color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .nav-toggle span{display:block; width:22px; height:2px; background:var(--navy); margin:5px 0; transition:.2s;}
+
+  /* HERO */
+  .hero{padding:76px 0 64px;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:52px; align-items:start;}
+  .hero h1{font-size:clamp(38px,5.4vw,60px); line-height:1.04; margin-bottom:10px;}
+  .hero-role{font-size:clamp(16px,2vw,19px); color:var(--emerald); font-weight:600; margin-bottom:18px;}
+  .hero-desc{font-size:16.5px; color:var(--ink-soft); max-width:520px; margin-bottom:30px;}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:36px;}
+  .hero-chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-family:var(--mono); font-size:12px; padding:6px 12px; border-radius:20px;
+    background:var(--emerald-soft); color:var(--emerald); border:1px solid rgba(42,111,91,.18);
+  }
+
+  /* Candidate card */
+  .candidate-card{
+    background:var(--white); border:1px solid var(--line); border-radius:16px; padding:26px 26px 22px;
+    box-shadow:0 12px 40px rgba(31,58,95,.08);
+  }
+  .cc-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px;}
+  .cc-label{font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--ink-soft); text-transform:uppercase;}
+  .cc-status{
+    font-family:var(--mono); font-size:11.5px; padding:4px 10px; border-radius:20px;
+    background:var(--emerald-soft); color:var(--emerald); font-weight:500;
+  }
+  .cc-field{display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--line); font-size:14.5px;}
+  .cc-field:last-child{border-bottom:none;}
+  .cc-field-label{color:var(--ink-soft); font-family:var(--mono); font-size:12.5px;}
+  .cc-field-value{font-weight:600; text-align:right; color:var(--ink);}
+
+  /* SECTIONS generic */
+  section{padding:78px 0;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft); font-size:16px;}
+
+  /* SKILLS */
+  .skills-section{background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .skill-groups{display:grid; grid-template-columns:repeat(2,1fr); gap:28px;}
+  .skill-group{background:var(--white); border:1px solid var(--line); border-radius:12px; padding:22px 24px;}
+  .skill-group h3{font-size:15px; font-family:var(--mono); text-transform:uppercase; letter-spacing:.06em; color:var(--navy); margin-bottom:14px; font-weight:500;}
+  .skill-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{font-size:13.5px; padding:6px 12px; border-radius:7px; background:var(--paper); border:1px solid var(--line); color:var(--ink);}
+
+  /* FEATURED */
+  .featured{background:var(--navy-deep); color:var(--paper);}
+  .featured .eyebrow{color:var(--gold);}
+  .featured-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .featured h2{color:var(--white); font-size:clamp(26px,3.2vw,36px); margin-bottom:16px;}
+  .featured-desc{color:#C7D1DE; font-size:16px; margin-bottom:24px;}
+  .feature-list{list-style:none; padding:0; margin:0 0 30px; display:grid; gap:12px;}
+  .feature-list li{display:flex; gap:10px; font-size:14.5px; color:#DCE3EC;}
+  .feature-list li::before{content:'—'; color:var(--gold); flex-shrink:0;}
+  .featured-ctas{display:flex; gap:12px; flex-wrap:wrap;}
+  .featured-panel{
+    background:rgba(255,255,255,.04); border:1px solid var(--line-dark); border-radius:14px; padding:26px;
+  }
+  .fp-row{display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.08); font-size:14px;}
+  .fp-row:last-child{border-bottom:none;}
+  .fp-label{color:#93A2B8; font-family:var(--mono); font-size:12.5px;}
+  .fp-value{color:var(--white); font-weight:600;}
+
+  /* PROJECT GRID */
+  .project-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .card{
+    background:var(--white); border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    display:flex; flex-direction:column; transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:0 16px 40px rgba(31,58,95,.1);}
+  .card-media{background:var(--paper-alt); border-bottom:1px solid var(--line); padding:14px;}
+  .card-media img{border-radius:6px; border:1px solid var(--line);}
+  .card-body{padding:22px 24px 24px; display:flex; flex-direction:column; flex:1;}
+  .card-body h3{font-size:19px; margin-bottom:8px; font-family:var(--display); font-weight:600;}
+  .card-body p{color:var(--ink-soft); font-size:14.5px; margin-bottom:16px; flex:1;}
+  .card-tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:18px;}
+  .card-tags .tag{font-size:12px; padding:4px 9px;}
+  .card-links{display:flex; gap:10px;}
+  .card-links a{font-size:13.5px; font-weight:600; color:var(--navy); text-decoration:none; display:inline-flex; align-items:center; gap:5px;}
+  .card-links a:hover{color:var(--emerald);}
+
+  /* CODE SNIPPET CARD */
+  .code-card{background:var(--navy-deep); border-radius:8px; padding:18px 18px; font-family:var(--mono); font-size:12.5px; color:#CFE0D6; overflow-x:auto; line-height:1.7;}
+  .code-card .kw{color:#7FB0E0;} .code-card .fn{color:#E0B87F;} .code-card .str{color:#9ED6A6;} .code-card .cm{color:#6E8299;}
+
+  /* LIFECYCLE */
+  .lifecycle-list{display:flex; flex-direction:column; gap:0;}
+  .lc-item{
+    display:grid; grid-template-columns:64px 1fr 1fr; gap:32px; align-items:center;
+    padding:36px 0; border-bottom:1px solid var(--line);
+  }
+  .lc-item:first-child{padding-top:0;}
+  .lc-item:last-child{border-bottom:none;}
+  .lc-num{font-family:var(--display); font-size:34px; font-weight:600; color:var(--line); line-height:1;}
+  .lc-body h3{font-size:20px; margin-bottom:8px;}
+  .lc-body p{color:var(--ink-soft); font-size:14.5px; margin-bottom:14px;}
+  .lc-media img{border-radius:8px; border:1px solid var(--line);}
+  .lc-links{display:flex; gap:16px;}
+  .lc-links a{font-size:13.5px; font-weight:600; color:var(--navy); text-decoration:none;}
+  .lc-links a:hover{color:var(--emerald);}
+
+  .backbone{
+    margin-top:20px; background:var(--gold-soft); border:1px solid rgba(184,135,61,.3); border-radius:12px;
+    padding:24px 26px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  .backbone h3{font-size:16.5px; color:var(--navy); margin-bottom:4px;}
+  .backbone p{font-size:13.5px; color:var(--ink-soft);}
+
+  /* CONTACT */
+  .contact{background:var(--navy); color:var(--paper); text-align:center;}
+  .contact h2{color:var(--white); margin-bottom:14px;}
+  .contact p{color:#B9C4D3; font-size:16px; max-width:480px; margin:0 auto 30px;}
+  .contact-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+
+  footer{padding:26px 0; text-align:center; font-size:13px; color:var(--ink-soft);}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .skill-groups{grid-template-columns:1fr;}
+    .featured-grid{grid-template-columns:1fr;}
+    .project-grid{grid-template-columns:1fr;}
+    .lc-item{grid-template-columns:1fr; gap:14px;}
+    .lc-num{font-size:26px;}
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0; background:var(--paper); flex-direction:column;
+      padding:16px 28px 22px; border-bottom:1px solid var(--line); display:none; gap:16px;
+    }
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;}
+    .nav-cta .btn span{display:none;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">SM</span>
+      <span class="brand-name">Srishti Mehrotra</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#recruitercopilot">RecruiterCopilot</a>
+      <a href="#projects">Projects</a>
+      <a href="#lifecycle">HR Operations</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="assets/resume.pdf" target="_blank" rel="noopener"><span>Résumé</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Candidate Profile</p>
+      <h1>Srishti Mehrotra</h1>
+      <p class="hero-role">Talent Acquisition Specialist — AI‑Augmented Recruiting &amp; People Analytics</p>
+      <p class="hero-desc">I build the tools I wish every recruiter had: screening copilots, funnel analytics, and the SOPs that keep HR operations audit-ready. Every project below is real, working, and open for review — not just a resume line.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="assets/resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+        <a class="btn btn-ghost" href="https://github.com/SrishtiMehrotraHR" target="_blank" rel="noopener">View GitHub</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/srishtimehrotra" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+      <div class="hero-chips">
+        <span class="chip">SQL</span>
+        <span class="chip">Excel / Power Query</span>
+        <span class="chip">AI-Augmented Sourcing</span>
+        <span class="chip">HR Operations</span>
+        <span class="chip">People Analytics</span>
+      </div>
+    </div>
+    <div class="candidate-card reveal">
+      <div class="cc-top">
+        <span class="cc-label">Record #SM-2026</span>
+        <span class="cc-status">Open to opportunities</span>
+      </div>
+      <div class="cc-field"><span class="cc-field-label">LOCATION</span><span class="cc-field-value">Bengaluru, India</span></div>
+      <div class="cc-field"><span class="cc-field-label">EXPERIENCE</span><span class="cc-field-value">2+ years, Talent Acquisition</span></div>
+      <div class="cc-field"><span class="cc-field-label">EDUCATION</span><span class="cc-field-value">MBA — HR, Alliance University</span></div>
+      <div class="cc-field"><span class="cc-field-label">FOCUS AREA</span><span class="cc-field-value">TA Analytics &amp; AI-Augmented Recruiting</span></div>
+      <div class="cc-field"><span class="cc-field-label">PORTFOLIO</span><span class="cc-field-value">7 shipped projects</span></div>
+      <div class="cc-field"><span class="cc-field-label">EMAIL</span><span class="cc-field-value">srishtimehrotra12@gmail.com</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="skills-section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Screening Criteria</p>
+      <h2>What I actually bring to the table</h2>
+      <p>Not a keyword list — every skill below is backed by a project you can open, run, or read the formulas in.</p>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group reveal">
+        <h3>Talent Acquisition</h3>
+        <div class="skill-tags">
+          <span class="tag">End-to-End Recruitment</span>
+          <span class="tag">Boolean Search</span>
+          <span class="tag">Pipeline Management</span>
+          <span class="tag">Stakeholder Management</span>
+          <span class="tag">Offer Rollout</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>AI &amp; Recruiting Tech</h3>
+        <div class="skill-tags">
+          <span class="tag">AI-Augmented Screening</span>
+          <span class="tag">ATS — Freshteams, TurboHire</span>
+          <span class="tag">HRIS — Darwinbox, Keka</span>
+          <span class="tag">Built RecruiterCopilot</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Analytics</h3>
+        <div class="skill-tags">
+          <span class="tag">SQL — JOIN, GROUP BY, HAVING</span>
+          <span class="tag">Excel — VLOOKUP, XLOOKUP</span>
+          <span class="tag">Pivot Tables &amp; Dashboards</span>
+          <span class="tag">COUNTIFS / SUMIFS</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>HR Operations</h3>
+        <div class="skill-tags">
+          <span class="tag">Onboarding SOPs</span>
+          <span class="tag">Statutory Compliance</span>
+          <span class="tag">Leave &amp; Attendance</span>
+          <span class="tag">Exit &amp; Offboarding</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured" id="recruitercopilot">
+  <div class="wrap featured-grid">
+    <div class="reveal">
+      <p class="eyebrow">Flagship Project</p>
+      <h2>RecruiterCopilot</h2>
+      <p class="featured-desc">A shipped, working AI product — not a demo. Upload a job description and a stack of resumes, and RecruiterCopilot ranks candidates, explains the match, and generates interview kits, all while keeping a human clearly in the loop.</p>
+      <ul class="feature-list">
+        <li>Ranks candidates against a JD with a per-candidate match breakdown</li>
+        <li>Generates AI interview kits and evidence-based candidate reports</li>
+        <li>Exports ranked shortlists to CSV, saves session history automatically</li>
+        <li>Built-in AI disclaimer — final hiring decisions stay with humans</li>
+      </ul>
+      <div class="featured-ctas">
+        <a class="btn btn-gold" href="https://recruitercopilot.lovable.app" target="_blank" rel="noopener">Try it live</a>
+        <a class="btn btn-on-dark" href="https://github.com/SrishtiMehrotraHR/recruitercopilot-fdc74d23" target="_blank" rel="noopener">View source</a>
+      </div>
+    </div>
+    <div class="featured-panel reveal">
+      <div class="fp-row"><span class="fp-label">STACK</span><span class="fp-value">React, TypeScript, shadcn/ui</span></div>
+      <div class="fp-row"><span class="fp-label">INPUT</span><span class="fp-value">JD + multiple résumés (PDF/DOC/TXT)</span></div>
+      <div class="fp-row"><span class="fp-label">OUTPUT</span><span class="fp-value">Ranked shortlist + interview kits</span></div>
+      <div class="fp-row"><span class="fp-label">EXPORT</span><span class="fp-value">CSV, session history</span></div>
+      <div class="fp-row"><span class="fp-label">STATUS</span><span class="fp-value">Live &amp; deployed</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Analytics &amp; AI Projects</p>
+      <h2>Recruitment funnel analytics</h2>
+      <p>The same recruitment dataset, analyzed two ways — SQL for the query layer, Excel for the dashboard layer most TA teams actually work in day to day.</p>
+    </div>
+    <div class="project-grid">
+      <div class="card reveal">
+        <div class="card-media">
+          <div class="code-card"><span class="cm">-- Which channels convert best?</span><br>
+<span class="kw">SELECT</span> source,<br>
+&nbsp;&nbsp;<span class="fn">COUNT</span>(*) <span class="kw">AS</span> total,<br>
+&nbsp;&nbsp;<span class="fn">SUM</span>(<span class="kw">CASE WHEN</span> status=<span class="str">'Hired'</span> <span class="kw">THEN</span> 1 <span class="kw">ELSE</span> 0 <span class="kw">END</span>) <span class="kw">AS</span> hired<br>
+<span class="kw">FROM</span> candidates<br>
+<span class="kw">GROUP BY</span> source<br>
+<span class="kw">ORDER BY</span> hired <span class="kw">DESC</span>;</div>
+        </div>
+        <div class="card-body">
+          <h3>Recruitment Funnel — SQL</h3>
+          <p>Seven business questions answered in SQL: source performance, time-to-fill by role, department hiring volume, and conversion rate using CASE WHEN aggregation.</p>
+          <div class="card-tags">
+            <span class="tag">SELECT / WHERE / JOIN</span>
+            <span class="tag">GROUP BY / HAVING</span>
+            <span class="tag">CASE WHEN</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/SrishtiMehrotraHR/recruitment-sql-analytics" target="_blank" rel="noopener">View repo →</a>
+          </div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-media"><img src="assets/excel-dashboard.png" alt="Excel recruitment dashboard showing hires by sourcing channel"></div>
+        <div class="card-body">
+          <h3>Recruitment Funnel — Excel</h3>
+          <p>The same analysis, live in Excel: VLOOKUP wrapped in IFERROR, COUNTIFS/SUMIFS for conditional metrics, and a chart built directly from formula output — not static numbers.</p>
+          <div class="card-tags">
+            <span class="tag">VLOOKUP / IFERROR</span>
+            <span class="tag">COUNTIFS / SUMIFS</span>
+            <span class="tag">Live chart</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/SrishtiMehrotraHR/recruitment-excel-dashboard" target="_blank" rel="noopener">View repo →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lifecycle" style="background:var(--paper-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">HR Operations</p>
+      <h2>The employee lifecycle, end to end</h2>
+      <p>Three stages an employee actually moves through — each with a real SOP and a live Excel tracker that flags what needs attention automatically.</p>
+    </div>
+    <div class="lifecycle-list">
+      <div class="lc-item reveal">
+        <div class="lc-num">01</div>
+        <div class="lc-body">
+          <h3>Onboarding</h3>
+          <p>SOP covering pre-joining through Month 1, plus a compliance tracker that flags incomplete documentation and PF/ESIC registration automatically.</p>
+          <div class="lc-links"><a href="https://github.com/SrishtiMehrotraHR/onboarding-compliance-tracker" target="_blank" rel="noopener">View SOP + tracker →</a></div>
+        </div>
+        <div class="lc-media"><img src="assets/onboarding-dashboard.png" alt="Onboarding compliance dashboard"></div>
+      </div>
+      <div class="lc-item reveal">
+        <div class="lc-num">02</div>
+        <div class="lc-body">
+          <h3>Leave &amp; Attendance</h3>
+          <p>Leave policy SOP with entitlement rules, paired with a tracker that calculates real-time leave balances and flags frequent unplanned absence as a wellbeing signal, not a disciplinary one.</p>
+          <div class="lc-links"><a href="https://github.com/SrishtiMehrotraHR/Leave-Attendance-Tracker" target="_blank" rel="noopener">View SOP + tracker →</a></div>
+        </div>
+        <div class="lc-media"><img src="assets/leave-dashboard.png" alt="Leave and attendance dashboard"></div>
+      </div>
+      <div class="lc-item reveal">
+        <div class="lc-num">03</div>
+        <div class="lc-body">
+          <h3>Exit &amp; Offboarding</h3>
+          <p>Full exit SOP from resignation to final settlement, with a tracker that flags overdue clearances and settlements against the 45-day statutory window.</p>
+          <div class="lc-links"><a href="https://github.com/SrishtiMehrotraHR/Offboarding-Exit-Tracker" target="_blank" rel="noopener">View SOP + tracker →</a></div>
+        </div>
+        <div class="lc-media"><img src="assets/offboarding-dashboard.png" alt="Offboarding dashboard"></div>
+      </div>
+    </div>
+
+    <div class="backbone reveal">
+      <div style="flex:1; min-width:260px;">
+        <h3>The throughline: Statutory Compliance Calendar</h3>
+        <p>PF, ESIC, PT, and TDS filings — due dates recalculated automatically with EDATE, flagged before they become a problem.</p>
+        <div style="margin-top:16px;">
+          <a class="btn btn-ghost" href="https://github.com/SrishtiMehrotraHR/Compliance-Calendar" target="_blank" rel="noopener">View SOP + tracker →</a>
+        </div>
+      </div>
+      <img src="assets/compliance-dashboard.png" alt="Compliance calendar dashboard" style="max-width:360px; border-radius:8px; border:1px solid var(--line);">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center; color:var(--gold);">Let's talk</p>
+    <h2>Open to Talent Acquisition &amp; People Analytics roles</h2>
+    <p>If any of this is relevant to a role you're hiring for, I'd genuinely like to hear from you.</p>
+    <div class="contact-ctas">
+      <a class="btn btn-gold" href="mailto:srishtimehrotra12@gmail.com">Email me</a>
+      <a class="btn btn-on-dark" href="https://linkedin.com/in/srishtimehrotra" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-on-dark" href="https://github.com/SrishtiMehrotraHR" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Srishti Mehrotra. Built to prove the work, not just claim it.</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  });
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12});
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
