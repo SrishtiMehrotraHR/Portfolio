@@ -187,6 +187,20 @@
   .backbone h3{font-size:16.5px; color:var(--navy); margin-bottom:4px;}
   .backbone p{font-size:13.5px; color:var(--ink-soft);}
 
+  .support-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .support-card{
+    background:var(--white); border:1px solid var(--line); border-radius:12px; padding:22px 22px 20px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .support-card:hover{transform:translateY(-2px); box-shadow:0 12px 30px rgba(31,58,95,.08);}
+  .support-card h3{font-size:16.5px; margin-bottom:8px; font-family:var(--display); font-weight:600;}
+  .support-card p{font-size:13.5px; color:var(--ink-soft); margin-bottom:14px; line-height:1.55;}
+  .support-card a{font-size:13px; font-weight:600; color:var(--navy); text-decoration:none;}
+  .support-card a:hover{color:var(--emerald);}
+  @media(max-width:860px){
+    .support-grid{grid-template-columns:1fr;}
+  }
+
   /* CONTACT */
   .contact{background:var(--navy); color:var(--paper); text-align:center;}
   .contact h2{color:var(--white); margin-bottom:14px;}
@@ -267,10 +281,10 @@
         <span class="cc-status">Open to opportunities</span>
       </div>
       <div class="cc-field"><span class="cc-field-label">LOCATION</span><span class="cc-field-value">Bengaluru, India</span></div>
-      <div class="cc-field"><span class="cc-field-label">EXPERIENCE</span><span class="cc-field-value">2+ years, combined HR &amp; TA</span></div>
+      <div class="cc-field"><span class="cc-field-label">EXPERIENCE</span><span class="cc-field-value">8 months, HR &amp; TA</span></div>
       <div class="cc-field"><span class="cc-field-label">EDUCATION</span><span class="cc-field-value">MBA — HR, Alliance University</span></div>
       <div class="cc-field"><span class="cc-field-label">FOCUS AREA</span><span class="cc-field-value">Open to HR roles — TA &amp; Analytics focus</span></div>
-      <div class="cc-field"><span class="cc-field-label">PORTFOLIO</span><span class="cc-field-value">7 shipped projects</span></div>
+      <div class="cc-field"><span class="cc-field-label">PORTFOLIO</span><span class="cc-field-value">12 shipped projects</span></div>
       <div class="cc-field"><span class="cc-field-label">EMAIL</span><span class="cc-field-value">srishtimehrotra12@gmail.com</span></div>
     </div>
   </div>
@@ -315,10 +329,12 @@
       <div class="skill-group reveal">
         <h3>HR Operations</h3>
         <div class="skill-tags">
-          <span class="tag">Onboarding SOPs</span>
+          <span class="tag">Onboarding &amp; Exit SOPs</span>
           <span class="tag">Statutory Compliance</span>
-          <span class="tag">Leave &amp; Attendance</span>
-          <span class="tag">Exit &amp; Offboarding</span>
+          <span class="tag">Payroll &amp; Payslip Processing</span>
+          <span class="tag">Performance Management</span>
+          <span class="tag">Grievance Handling</span>
+          <span class="tag">Employee Engagement (eNPS)</span>
         </div>
       </div>
     </div>
@@ -439,16 +455,44 @@
       </div>
     </div>
 
-    <div class="backbone reveal">
-      <div style="flex:1; min-width:260px;">
-        <h3>The throughline: Statutory Compliance Calendar</h3>
-        <p>PF, ESIC, PT, and TDS filings — due dates recalculated automatically with EDATE, flagged before they become a problem.</p>
-        <div style="margin-top:16px;">
-          <a class="btn btn-ghost" href="https://github.com/SrishtiMehrotraHR/Compliance-Calendar" target="_blank" rel="noopener">View SOP + tracker →</a>
-        </div>
-      </div>
-      <img src="assets/compliance-dashboard.png" alt="Compliance calendar dashboard" style="max-width:360px; border-radius:8px; border:1px solid var(--line);">
+    <div class="section-head reveal" style="margin-top:64px;">
+      <p class="eyebrow">Supporting HR Functions</p>
+      <h2>The functions that run alongside the lifecycle</h2>
+      <p>Not sequential stages — these run continuously, in parallel with onboarding, ongoing employment, and exit.</p>
     </div>
+    <div class="support-grid">
+      <div class="support-card reveal">
+        <h3>Background Verification</h3>
+        <p>5 check types tracked to a 30-day TAT, with discrepancies flagged separately from simple delays.</p>
+        <a href="https://github.com/SrishtiMehrotraHR/BGV" target="_blank" rel="noopener">View SOP + tracker →</a>
+      </div>
+      <div class="support-card reveal">
+        <h3>Performance Management</h3>
+        <p>Full review cycle from goal-setting to calibration, with a 5-point scale and a genuine PIP process.</p>
+        <a href="https://github.com/SrishtiMehrotraHR/Performance-Management" target="_blank" rel="noopener">View SOP + tracker →</a>
+      </div>
+      <div class="support-card reveal">
+        <h3>Employee Engagement</h3>
+        <p>Live eNPS calculated from raw survey data, plus a closed-loop action-item tracker with 60-day SLAs.</p>
+        <a href="https://github.com/SrishtiMehrotraHR/Employee-Engagement" target="_blank" rel="noopener">View SOP + tracker →</a>
+      </div>
+      <div class="support-card reveal">
+        <h3>Grievance Handling</h3>
+        <p>Confidentiality-by-design case tracking — logged by category, not identity — against a 30-day SLA.</p>
+        <a href="https://github.com/SrishtiMehrotraHR/Grievance-Handling" target="_blank" rel="noopener">View SOP + tracker →</a>
+      </div>
+      <div class="support-card reveal">
+        <h3>Payroll</h3>
+        <p>Live PF/ESIC/PT/TDS deduction formulas and a department-level payroll cost dashboard.</p>
+        <a href="https://github.com/SrishtiMehrotraHR/Payroll" target="_blank" rel="noopener">View SOP + tracker →</a>
+      </div>
+      <div class="support-card reveal">
+        <h3>Statutory Compliance Calendar</h3>
+        <p>PF, ESIC, PT, and TDS filing due dates recalculated automatically with EDATE.</p>
+        <a href="https://github.com/SrishtiMehrotraHR/Compliance-Calendar" target="_blank" rel="noopener">View SOP + tracker →</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
